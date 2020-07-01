@@ -1,13 +1,10 @@
-// kmeans.cpp : 定义控制台应用程序的入口点。
-//
-
-#include "stdafx.h"
 #include <vector>
 #include <cstdlib>
 #include <set>
 #include <map>
 #include <cmath>
 #include <iostream>
+#include  <climits>
 using namespace std;
 
 struct Cluster {

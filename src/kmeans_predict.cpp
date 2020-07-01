@@ -1,6 +1,7 @@
-#include "include/model/kmeans.h"
-#include "include/utils/utils.h"
+#include "../include/model/kmeans.h"
+#include "../include/utils/utils.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 string help() {
@@ -18,21 +19,21 @@ string help() {
 	return helpInfo;
 }
 
-int train(TrainOption & arg) {
+int predict(TrainOption & arg) {
 	kmeans *kmodel = new kmeans(arg.k, arg.maxIter);
-	if (arg.flag != "train") {
-		cout << "task type is wrong, -f flag should be set train!" << endl;
+	if (arg.flag != "test") {
+		cout << "task type is wrong, -f flag should be set test!" << endl;
 	}
-	vector<Point*> trainSet = kmodel->loadData(arg.trainFile);
-	kmodel->ktrain(trainSet, arg.k, arg.maxIter);
-	kmodel->saveModel(arg.modelPath);
+	kmodel->loadModel(arg.modelPath);
+	kmodel->kpredictBatch(arg.testFile, arg.resultFile);
 }
 
 int main(int argc, char *argv[]) {
 	TrainOption trainOpt;
 	try
 	{
-		trainOpt.parse(utils::parseArgs(argc, argv));
+        vector<string> optVec = utils::parseArgs(argc, argv);
+		trainOpt.parse(optVec);
 	}
 	catch (const invalid_argument& e)
 	{
@@ -40,5 +41,6 @@ int main(int argc, char *argv[]) {
 		cerr << help() << endl;
 		return -1;
 	}
-	train(trainOpt);
+	predict(trainOpt);
+	return 0;
 }

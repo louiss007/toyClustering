@@ -1,9 +1,11 @@
 #include "../../include/model/kmeans.h"
+#include "../../include/sample/ClusterSample.h"
 #include <set>
 #include <fstream>
 #include <iostream>
 #include <string>
-#include "../../include/sample/ClusterSample.h"
+#include <cmath>
+#include  <climits>
 using namespace std;
 
 

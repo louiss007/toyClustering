@@ -1,10 +1,9 @@
-#include "stdafx.h"
-#include "kmeans.h"
+#include "../../include/model/kmeans.h"
 #include <set>
 #include <fstream>
 #include <iostream>
 #include <string>
-#include "ClusterSample.h"
+#include "../../include/sample/ClusterSample.h"
 using namespace std;
 
 

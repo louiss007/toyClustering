@@ -1,5 +1,5 @@
-#include "kmeans.h"
-#include "utils.h"
+#include "include/model/kmeans.h"
+#include "include/utils/utils.h"
 #include <iostream>
 using namespace std;
 

@@ -1,11 +1,7 @@
-// kmeansII.cpp : 定义控制台应用程序的入口点。
-//
-
-#include "stdafx.h"
 #include <map>
 #include <iostream>
 #include <algorithm>
-#include "ClusterSample.h"
+#include "include/sample/ClusterSample.h"
 using namespace std;
 
 void test() {

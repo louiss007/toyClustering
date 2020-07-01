@@ -1,5 +1,4 @@
-#include "stdafx.h"
-#include "ClusterSample.h"
+#include "../../include/sample/ClusterSample.h"
 #include <iostream>
 using namespace std;
 
